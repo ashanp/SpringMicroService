@@ -29,5 +29,6 @@
         <module>service-finance</module>
         <module>service-hr</module>
         <module>service-inventory</module>
+        <module>service-configuration</module>
     </modules>
 </project>
