@@ -1,4 +1,4 @@
-package com.baeldung;
+package com.perera.microservice;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

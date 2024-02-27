@@ -1,4 +1,4 @@
-package com.test.servive1;
+package com.perera.microservice.serviceone;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/hello")
 public class Service1Controller {
 	
-	private Map<Long, Product> productMap = new HashMap<>();
+	private final Map<Long, Product> productMap = new HashMap<>();
 	
     public Service1Controller() {
         productMap.put(1L, new Product(1L, "Iphone 15", 150000.55));

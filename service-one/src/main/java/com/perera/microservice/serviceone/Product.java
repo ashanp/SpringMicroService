@@ -1,4 +1,4 @@
-package com.test.servive1;
+package com.perera.microservice.serviceone;
 
 public class Product {
 
