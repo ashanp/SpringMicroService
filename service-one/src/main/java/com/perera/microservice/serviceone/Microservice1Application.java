@@ -11,3 +11,5 @@ public class Microservice1Application {
 		SpringApplication.run(Microservice1Application.class, args);
 	}
 }
+
+// reference https://dzone.com/articles/using-spring-config-server

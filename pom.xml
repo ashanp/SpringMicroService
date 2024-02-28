@@ -26,6 +26,7 @@
         <module>service-registry</module>
         <module>api-gateway</module>
         <module>service-one</module>
+        <module>service-two</module>
         <module>service-finance</module>
         <module>service-hr</module>
         <module>service-inventory</module>
