@@ -1,13 +1,8 @@
 package com.perera.microservice.serviceone;
 
-import org.springframework.beans.factory.annotation.Value;
-
-
 public class Product {
 
-
-
-	private Long id;
+	private long id;
 	private String name;
 	private double price;
 	public Product(long id, String name, double price) {

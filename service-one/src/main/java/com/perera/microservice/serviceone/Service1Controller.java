@@ -4,27 +4,19 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-@Configuration
-@EnableAutoConfiguration
+
 @RestController
-@RequestMapping("/hello")
+//@RequestMapping("/hello")
 public class Service1Controller {
 	
 	private final Map<Long, Product> productMap = new HashMap<>();
 
-    @Value("${key1}")
+    @Value("${value.name}")
     String key1;
-
-//    @Autowired
-//    private configuration configuration1;
 
     public Service1Controller() {
         productMap.put(1L, new Product(1L, "Iphone 15", 150000.55));
@@ -34,11 +26,14 @@ public class Service1Controller {
         productMap.put(5L, new Product(5L, key1, 55000.99));
     }
 	
-	@GetMapping
+	@GetMapping("/hello_old")
     public List<Product> getAllProducts() {
-		return new ArrayList<>(productMap.values());
+        return new ArrayList<>(productMap.values());
     }
-	
-	
+
+    @GetMapping("/hello")
+    public String getHello() {
+        return "Hello Guys"+key1;
+    }
 
 }
