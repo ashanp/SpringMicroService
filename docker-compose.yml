@@ -1,0 +1,58 @@
+services:
+  service-registry:
+    build: ./service-registry
+    image: eureka-server
+    ports:
+      - "8761:8761"
+    networks:
+      - mynetwork
+
+  api-gateway:
+    build: ./api-gateway
+    image: api-gateway
+    depends_on:
+      service-registry:
+        condition: service_started
+    ports:
+      - "8765:8765"
+    networks:
+      - mynetwork
+
+  service-configuration:
+    build: ./service-configuration
+    image: service-configuration
+    depends_on:
+      service-registry:
+        condition: service_started
+    ports:
+      - "8888:8888"
+      - "80:80"
+      - "443:443"
+    networks:
+      - mynetwork
+
+  service-two:
+    build: ./service-two
+    image: service-two
+    depends_on:
+      service-registry:
+        condition: service_started
+    ports:
+      - "8082:8082"
+    networks:
+      - mynetwork
+
+  service-one:
+    build: ./service-one
+    image: service-one
+    depends_on:
+      service-configuration:
+        condition: service_started
+    ports:
+      - "8081:8081"
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge

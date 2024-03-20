@@ -1,0 +1,16 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: service-configuration
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ashanp/configuration.git
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://service-registry:8761/eureka/

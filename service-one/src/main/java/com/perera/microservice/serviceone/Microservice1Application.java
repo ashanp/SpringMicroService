@@ -11,4 +11,3 @@ public class Microservice1Application {
 	}
 }
 
-// reference https://dzone.com/articles/using-spring-config-server
