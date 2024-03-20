@@ -1,9 +1,7 @@
 package com.perera.microservice.serviceone;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.List;
+import java.util.*;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,6 +31,7 @@ public class Service1Controller {
 
     @GetMapping("/hello")
     public String getHello() {
+        System.out.println("Call made on service-one microservice @:"+ new Date());
         return "Hello Guys"+key1;
     }
 
